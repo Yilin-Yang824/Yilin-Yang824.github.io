@@ -20,24 +20,21 @@ const keepActiveLinkVisible = (link) => {
     return;
   }
 
-  const padding = 40;
-  const linkTop = link.offsetTop;
-  const linkBottom = linkTop + link.offsetHeight;
-  const viewTop = sideNav.scrollTop;
-  const viewBottom = viewTop + sideNav.clientHeight;
-  const maxScroll = sideNav.scrollHeight - sideNav.clientHeight;
+  const sideNavRect = sideNav.getBoundingClientRect();
+  const linkRect = link.getBoundingClientRect();
+  const verticalPadding = 24;
+  const isAboveVisibleArea = linkRect.top < sideNavRect.top + verticalPadding;
+  const isBelowVisibleArea = linkRect.bottom > sideNavRect.bottom - verticalPadding;
 
-  if (linkTop < viewTop + padding) {
-    sideNav.scrollTo({
-      top: Math.max(0, linkTop - padding),
-      behavior: "auto",
-    });
-    return;
-  }
+  if (isAboveVisibleArea || isBelowVisibleArea) {
+    const targetScrollTop =
+      sideNav.scrollTop +
+      (linkRect.top - sideNavRect.top) -
+      sideNav.clientHeight / 2 +
+      linkRect.height / 2;
 
-  if (linkBottom > viewBottom - padding) {
     sideNav.scrollTo({
-      top: Math.min(maxScroll, linkBottom - sideNav.clientHeight + padding),
+      top: Math.max(0, targetScrollTop),
       behavior: "auto",
     });
   }
