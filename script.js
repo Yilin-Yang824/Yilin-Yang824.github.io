@@ -79,14 +79,17 @@ revealSections.forEach((section) => {
 });
 
 const updateActiveSection = () => {
-  const topOffset = 120;
   const firstSection = sections[0];
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+  const focusLine = viewportHeight * 0.45;
   let currentId = sections[0]?.id || "item-01";
   let matchedSection = null;
+  let nearestSection = null;
+  let nearestDistance = Number.POSITIVE_INFINITY;
 
   if (firstSection) {
     const firstRect = firstSection.getBoundingClientRect();
-    if (firstRect.top > topOffset) {
+    if (firstRect.top > focusLine) {
       clearActiveLinks();
 
       if (sideNav && window.innerWidth > 1080) {
@@ -99,20 +102,23 @@ const updateActiveSection = () => {
 
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
-    if (rect.top <= topOffset && rect.bottom > topOffset) {
+    const sectionCenter = rect.top + rect.height / 2;
+    const distanceToFocusLine = Math.abs(sectionCenter - focusLine);
+
+    if (distanceToFocusLine < nearestDistance) {
+      nearestDistance = distanceToFocusLine;
+      nearestSection = section;
+    }
+
+    if (rect.top <= focusLine && rect.bottom >= focusLine) {
       matchedSection = section;
     }
   });
 
   if (matchedSection) {
     currentId = matchedSection.id;
-  } else {
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= topOffset) {
-        currentId = section.id;
-      }
-    });
+  } else if (nearestSection) {
+    currentId = nearestSection.id;
   }
 
   setActiveLink(currentId);
