@@ -167,6 +167,7 @@ a {
 .content {
   min-width: 0;
   padding-bottom: 32px;
+  padding-right: 28px;
 }
 
 .mobile-nav-toggle {
@@ -557,6 +558,10 @@ body.js-enabled .is-visible {
   .site-shell {
     width: min(100% - 16px, 1440px);
     margin: 8px auto 20px;
+  }
+
+  .content {
+    padding-right: 0;
   }
 
   .intro-card,
