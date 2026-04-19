@@ -1,0 +1,9 @@
+<svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="640" rx="40" fill="#241D1A"/>
+  <path d="M0 470C168 380 314 360 480 422C646 484 780 482 960 402V640H0V470Z" fill="#D86E46"/>
+  <path d="M0 512C182 442 332 430 492 482C652 534 806 536 960 482V640H0V512Z" fill="#8D3D1D"/>
+  <circle cx="730" cy="162" r="92" fill="#F4D9C5"/>
+  <text x="92" y="132" fill="#FFF8F0" font-family="Georgia, serif" font-size="60">Borderlands</text>
+  <text x="92" y="194" fill="#FFF8F0" font-family="Georgia, serif" font-size="60">Resistance</text>
+  <text x="96" y="286" fill="#F4D9C5" font-family="Arial, sans-serif" font-size="30" font-weight="700">language / identity / fear / refusal</text>
+</svg>
