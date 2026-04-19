@@ -1,0 +1,11 @@
+<svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="640" rx="40" fill="#F0E4D5"/>
+  <circle cx="252" cy="220" r="130" fill="#D86E46"/>
+  <circle cx="470" cy="220" r="130" fill="#F1C3A7"/>
+  <circle cx="688" cy="220" r="130" fill="#B25A36"/>
+  <rect x="122" y="368" width="716" height="162" rx="30" fill="#FFF8F0"/>
+  <text x="146" y="134" fill="#2B211B" font-family="Georgia, serif" font-size="58">Translanguaging</text>
+  <text x="156" y="430" fill="#8D3D1D" font-family="Arial, sans-serif" font-size="29" font-weight="700">repertoire / movement / multimodality / space</text>
+  <rect x="158" y="458" width="420" height="16" rx="8" fill="#E8CEBD"/>
+  <rect x="158" y="490" width="344" height="16" rx="8" fill="#E8CEBD"/>
+</svg>
