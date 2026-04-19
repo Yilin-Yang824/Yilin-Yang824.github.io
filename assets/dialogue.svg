@@ -1,0 +1,12 @@
+<svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="640" rx="40" fill="#E7DDD0"/>
+  <rect x="120" y="108" width="310" height="210" rx="34" fill="#FFF8F0"/>
+  <rect x="454" y="164" width="386" height="236" rx="34" fill="#D86E46"/>
+  <path d="M400 320L342 372V320H400Z" fill="#FFF8F0"/>
+  <path d="M454 362L512 414V362H454Z" fill="#D86E46"/>
+  <text x="148" y="178" fill="#2B211B" font-family="Georgia, serif" font-size="44">Dialogue</text>
+  <text x="148" y="226" fill="#2B211B" font-family="Georgia, serif" font-size="44">Mediation</text>
+  <text x="486" y="252" fill="#FFF8F0" font-family="Arial, sans-serif" font-size="30" font-weight="700">Thinking grows through</text>
+  <text x="486" y="294" fill="#FFF8F0" font-family="Arial, sans-serif" font-size="30" font-weight="700">tools, speech, others,</text>
+  <text x="486" y="336" fill="#FFF8F0" font-family="Arial, sans-serif" font-size="30" font-weight="700">and shared activity.</text>
+</svg>
