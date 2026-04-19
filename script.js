@@ -80,9 +80,7 @@ const updateActiveSection = () => {
   const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
   const focusLine = viewportHeight * 0.45;
   let currentId = sections[0]?.id || "item-01";
-  let matchedSection = null;
-  let nearestSection = null;
-  let nearestDistance = Number.POSITIVE_INFINITY;
+  let crossedSection = null;
 
   if (firstSection) {
     const firstRect = firstSection.getBoundingClientRect();
@@ -99,23 +97,13 @@ const updateActiveSection = () => {
 
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
-    const sectionCenter = rect.top + rect.height / 2;
-    const distanceToFocusLine = Math.abs(sectionCenter - focusLine);
-
-    if (distanceToFocusLine < nearestDistance) {
-      nearestDistance = distanceToFocusLine;
-      nearestSection = section;
-    }
-
-    if (rect.top <= focusLine && rect.bottom >= focusLine) {
-      matchedSection = section;
+    if (rect.top <= focusLine) {
+      crossedSection = section;
     }
   });
 
-  if (matchedSection) {
-    currentId = matchedSection.id;
-  } else if (nearestSection) {
-    currentId = nearestSection.id;
+  if (crossedSection) {
+    currentId = crossedSection.id;
   }
 
   setActiveLink(currentId);
