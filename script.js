@@ -1,5 +1,61 @@
 document.body.classList.add("js-enabled");
 
+const classifyEntryBlocks = () => {
+  const blocks = document.querySelectorAll(".entry-card .entry-block");
+
+  blocks.forEach((block) => {
+    const heading = block.querySelector("h3");
+    const label = heading?.textContent?.trim().toLowerCase() || "";
+
+    block.classList.remove(
+      "block-definition",
+      "block-notes",
+      "block-importance",
+      "block-connections",
+      "block-reference",
+      "block-quote",
+      "block-visual"
+    );
+
+    if (
+      label.includes("definition")
+    ) {
+      block.classList.add("block-definition");
+    } else if (
+      label.includes("expanded notes") ||
+      label.includes("my notes") ||
+      label.includes("how the concept appears")
+    ) {
+      block.classList.add("block-notes");
+    } else if (
+      label.includes("why it matters") ||
+      label.includes("analytical utility") ||
+      label.includes("research significance") ||
+      label === "difference"
+    ) {
+      block.classList.add("block-importance");
+    } else if (
+      label.includes("connections")
+    ) {
+      block.classList.add("block-connections");
+    } else if (
+      label.includes("reference")
+    ) {
+      block.classList.add("block-reference");
+    } else if (
+      label.includes("quote")
+    ) {
+      block.classList.add("block-quote");
+    } else if (
+      label.includes("visual")
+    ) {
+      block.classList.add("block-visual");
+    }
+  });
+};
+
+classifyEntryBlocks();
+
 const revealSections = document.querySelectorAll("[data-section]");
 const sections = document.querySelectorAll(".entry-card[data-section]");
 const navLinks = document.querySelectorAll(".nav-link");
